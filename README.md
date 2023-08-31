@@ -9,10 +9,10 @@ Follow these steps to install and interact with the Rajo Dashboard:
 
 
 # Clone the repository
-git clone repository
+git clone https://github.com/akirachix/Warsan-Frontend.git
 
 # Navigate to the project directory
-cd repo-name
+cd Warsan-Frontend
 
 # Install dependencies
 npm install
