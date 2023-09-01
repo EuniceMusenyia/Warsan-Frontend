@@ -5,7 +5,7 @@ Rajo Dashboard provides real-time insights and data visualizations for NGO Offic
 
 ## Getting Started
 
-Follow these steps to install and interact with the Rajo Dashboard:
+Follow these steps to install and interact with Rajo Dashboard:
 
 
 # Clone the repository
