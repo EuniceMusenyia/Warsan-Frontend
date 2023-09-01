@@ -20,7 +20,7 @@ Follow these steps to install and interact with the Rajo Dashboard:
 # Start the development server
 `npm run dev`
 
-# Navigating To The Dashboard
+# Navigate To The Dashboard
 `Open your browser and go to:http://localhost:3000`
 
 # Access The Dashboard
