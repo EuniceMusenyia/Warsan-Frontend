@@ -2,10 +2,10 @@ name: Next.js Main CI/CD
 
 on:
    push:
-    branches:
+     branches:
       - main  
-  pull_request:
-    branches:
+   pull_request:
+     branches:
       - main 
       
 
