@@ -3,15 +3,15 @@ name: Next.js Main CI/CD
 on:
   push:
     branches:
-      - main  
+     -main  
   pull_request:
     branches:
-      - main 
+      -main 
       
 
 jobs:
   build:
-    runs-on: ubuntu-version-20.04
+    runs-on: ubuntu-20.04
 
     steps:
     - name: Checkout code
