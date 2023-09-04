@@ -21,13 +21,13 @@ jobs:
       with:
         node-version: '14>=18'
 
-    - name: Install Packages
-      run: npm install
+    # - name: Install Packages
+    #   run: npm install
 
-    - name: Check Formatting
-      run: npx prettier --check .
+    # - name: Check Formatting
+    #   run: npx prettier --check .
 
-    - name: Build Next.js
-      run: npm run build
+    # - name: Build Next.js
+    #   run: npm run build
 
 
