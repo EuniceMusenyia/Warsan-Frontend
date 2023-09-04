@@ -2,10 +2,10 @@ name: Next.js Staging CI/CD
 
 on:
   push:
-     branches:
+    branches:
       - staging  
   pull_request:
-     branches:
+    branches:
       - staging
 
 jobs:
