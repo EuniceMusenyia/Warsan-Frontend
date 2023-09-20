@@ -16,9 +16,6 @@ interface NavItemProps {
 }
 
 
-interface SidebarProps {
-  children: React.ReactNode;
-}
 
 const NavItem: React.FC<NavItemProps> = ({ item }) => {
   const handleMouseEnter = (event: React.MouseEvent) => {
@@ -42,7 +39,7 @@ const NavItem: React.FC<NavItemProps> = ({ item }) => {
 };
 
 
-export const Sidebar: React.FC<SidebarProps> = ({ children }) => {
+export const Sidebar: React.FC = () => {
   return (
     <div className='flex h-screen fixed'>
       <div className='flex flex-col w-20 md:w-60 p-2 sm:p-3 md:p-5 bg-customBlue items-center justify-center'>
@@ -63,7 +60,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ children }) => {
           <NavItem item={{ icon: <MdLogout className="icon md:w-8 md:h-8 w-4 h-4 " />, label: 'Logout' }} />
         </div>
       </div>
-      <main className='flex-1'>{children}</main>
+      <main className='flex-1'></main>
     </div>
   );
 };
