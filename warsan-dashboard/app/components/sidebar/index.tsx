@@ -35,8 +35,8 @@ const NavItem: React.FC<NavItemProps> = ({ item }) => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <div className='flex items-center justify-center w-10 h-10 mr-2'>{item.icon}</div>
-      <span className='md:text-base text-sm'>{item.label}</span>
+      <div className='flex items-center justify-center w-5 h-5 md:mr-2 md:h-10 md:w-10'>{item.icon}</div>
+      <span className='md:text-base text-xs'>{item.label}</span>
     </div>
   );
 };
@@ -45,22 +45,22 @@ const NavItem: React.FC<NavItemProps> = ({ item }) => {
 export const Sidebar: React.FC<SidebarProps> = ({ children }) => {
   return (
     <div className='flex h-screen fixed'>
-      <div className='flex flex-col w-30 md:w-60 p-2 sm:p-3 md:p-5 bg-customBlue items-center justify-center'>
-        <div className='flex items-center mb-10'>
+      <div className='flex flex-col w-20 md:w-60 p-2 sm:p-3 md:p-5 bg-customBlue items-center justify-center'>
+        <div className='flex items-center md:mb-10 mb:6'>
           <img src={'./logo.png'} alt="arrow" className="md:w-12 md:h-12 w-6 h-6 object-cover -ml-1 mb-2 mt-2" />
-          <span className='text-white md:text-2xl sm:text-sm font-bold mb-2 ml-2 mt-2'>RAJO</span>
+          <span className='text-white md:text-2xl text-sm font-bold mb-2 ml-2 mt-2'>RAJO</span>
         </div>
-        <hr className='mb-5 w-60 mb-10' style={{ borderColor: 'white' }} />
+        <hr className='mb-5 w-20 md:w-60 mb-10' style={{ borderColor: 'white' }} />
         <div className='flex flex-col items-start justify-start'>
-          <NavItem item={{ icon: <LuLayoutGrid className="icon md:w-8 md:h-8 w-4 h-4 -ml-2" />, label: 'Dashboard' }} />
-          <NavItem item={{ icon: <TbAlertTriangle className="icon md:w-8 md:h-8 w-4 h-4 -ml-2" />, label: 'Alerts' }} />
-          <NavItem item={{ icon: <PiUsersThreeDuotone className="icon md:w-8 md:h-8 w-4 h-4 -ml-2" />, label: 'CHV' }} />
-          <NavItem item={{ icon: <PiUsersFour className="icon md:w-8 md:h-8 w-4 h-4 -ml-2" />, label: 'Children' }} />
+          <NavItem item={{ icon: <LuLayoutGrid className="icon md:w-8 md:h-6 w-4 h-4 " />, label: 'Dashboard' }} />
+          <NavItem item={{ icon: <TbAlertTriangle className="icon md:w-8 md:h-8 w-4 h-4 " />, label: 'Alerts' }} />
+          <NavItem item={{ icon: <PiUsersThreeDuotone className="icon md:w-8 md:h-8 w-4 h-4 " />, label: 'CHV' }} />
+          <NavItem item={{ icon: <PiUsersFour className="icon md:w-8 md:h-8 w-4 h-4 " />, label: 'Children' }} />
         </div>
 
         <div className='mt-auto flex flex-col items-start justify-start'>
-          <NavItem item={{ icon: <RiAccountCircleLine className="icon md:w-8 md:h-8 w-4 h-4 -ml-2" />, label: 'Profile' }} />
-          <NavItem item={{ icon: <MdLogout className="icon md:w-8 md:h-8 w-4 h-4 -ml-2" />, label: 'Logout' }} />
+          <NavItem item={{ icon: <RiAccountCircleLine className="icon md:w-8 md:h-8 w-4 h-4 " />, label: 'Profile' }} />
+          <NavItem item={{ icon: <MdLogout className="icon md:w-8 md:h-8 w-4 h-4 " />, label: 'Logout' }} />
         </div>
       </div>
       <main className='flex-1'>{children}</main>
