@@ -26,6 +26,8 @@ const NavItem: React.FC<NavItemProps> = ({ item }) => {
     (event.currentTarget as any).style.color = 'white';
   };
 
+
+
   return (
     <div
       className='flex items-center text-white my-1 p-1 rounded-lg navitems'
@@ -33,7 +35,8 @@ const NavItem: React.FC<NavItemProps> = ({ item }) => {
       onMouseLeave={handleMouseLeave}
     >
       <div className='flex items-center justify-center w-5 h-5 md:mr-2 md:h-10 md:w-10 mb-8'>{item.icon}</div>
-      <span className='md:text-base text-xs mb-8'>{item.label}</span>
+      <span className='md:text-base text-xs mb-8 ' >
+        {item.label}</span>
     </div>
   );
 };
@@ -49,15 +52,15 @@ export const Sidebar: React.FC = () => {
         </div>
         <hr className='mb-5 w-20 md:w-60 md:mb-16' style={{ borderColor: 'white' }} />
         <div className='flex flex-col items-start justify-start'>
-          <NavItem item={{ icon: <LuLayoutGrid className="icon md:w-8 md:h-6 w-4 h-4 " />, label: 'Dashboard' }} />
-          <NavItem item={{ icon: <TbAlertTriangle className="icon md:w-8 md:h-8 w-4 h-4 " />, label: 'Alerts' }} />
-          <NavItem item={{ icon: <PiUsersThreeDuotone className="icon md:w-8 md:h-8 w-4 h-4 " />, label: 'CHV' }} />
-          <NavItem item={{ icon: <PiUsersFour className="icon md:w-8 md:h-8 w-4 h-4 " />, label: 'Children' }} />
+          <NavItem item={{ icon: <LuLayoutGrid className="icon md:w-8 md:h-8 w-4 h-4 ml-2" />, label: 'Dashboard' }} />
+          <NavItem item={{ icon: <TbAlertTriangle className="icon md:w-8 md:h-8 w-4 h-4 ml-2" />, label: 'Alerts' }} />
+          <NavItem item={{ icon: <PiUsersThreeDuotone className="icon md:w-8 md:h-8 w-4 h-4 ml-2 " />, label: 'CHV' }} />
+          <NavItem item={{ icon: <PiUsersFour className="icon md:w-8 md:h-8 w-4 h-4 ml-2" />, label: 'Children' }} />
         </div>
 
-        <div className='mt-auto flex flex-col items-start justify-start'>
-          <NavItem item={{ icon: <RiAccountCircleLine className="icon md:w-8 md:h-8 w-4 h-4 " />, label: 'Profile' }} />
-          <NavItem item={{ icon: <MdLogout className="icon md:w-8 md:h-8 w-4 h-4 " />, label: 'Logout' }} />
+        <div className='mt-auto flex flex-col items-start justify-start mr-4'>
+          <NavItem item={{ icon: <RiAccountCircleLine className="icon md:w-8 md:h-8 w-4 h-4 -ml-2  " />, label: 'Profile' }} />
+          <NavItem item={{ icon: <MdLogout className="icon md:w-8 md:h-8 w-4 h-4 -ml-2 " />, label: 'Logout' }} />
         </div>
       </div>
       <main className='flex-1'></main>
