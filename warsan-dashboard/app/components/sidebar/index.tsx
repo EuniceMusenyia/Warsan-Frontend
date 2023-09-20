@@ -35,8 +35,8 @@ const NavItem: React.FC<NavItemProps> = ({ item }) => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <div className='flex items-center justify-center w-5 h-5 md:mr-2 md:h-10 md:w-10'>{item.icon}</div>
-      <span className='md:text-base text-xs'>{item.label}</span>
+      <div className='flex items-center justify-center w-5 h-5 md:mr-2 md:h-10 md:w-10 mb-8'>{item.icon}</div>
+      <span className='md:text-base text-xs mb-8'>{item.label}</span>
     </div>
   );
 };
@@ -47,10 +47,10 @@ export const Sidebar: React.FC<SidebarProps> = ({ children }) => {
     <div className='flex h-screen fixed'>
       <div className='flex flex-col w-20 md:w-60 p-2 sm:p-3 md:p-5 bg-customBlue items-center justify-center'>
         <div className='flex items-center md:mb-10 mb:6'>
-          <img src={'./logo.png'} alt="arrow" className="md:w-12 md:h-12 w-6 h-6 object-cover -ml-1 mb-2 mt-2" />
+          <img src={'./logo.png'} alt="arrow" className="md:w-14 md:h-14 w-6 h-6 object-cover -ml-1 mb-2 mt-2" />
           <span className='text-white md:text-2xl text-sm font-bold mb-2 ml-2 mt-2'>RAJO</span>
         </div>
-        <hr className='mb-5 w-20 md:w-60 mb-10' style={{ borderColor: 'white' }} />
+        <hr className='mb-5 w-20 md:w-60 md:mb-16' style={{ borderColor: 'white' }} />
         <div className='flex flex-col items-start justify-start'>
           <NavItem item={{ icon: <LuLayoutGrid className="icon md:w-8 md:h-6 w-4 h-4 " />, label: 'Dashboard' }} />
           <NavItem item={{ icon: <TbAlertTriangle className="icon md:w-8 md:h-8 w-4 h-4 " />, label: 'Alerts' }} />
