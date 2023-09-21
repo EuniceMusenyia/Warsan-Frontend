@@ -1,11 +1,11 @@
 'use client'
 
 import Image from 'next/image'
-import StackedAndPie from './components/Overview/page'
+import CombinedCharts from './components/Overview/page'
 export default function Home() {
   return (
     <>
-    <StackedAndPie/>
+    <CombinedCharts/>
     </>
 <main>
   <div>
