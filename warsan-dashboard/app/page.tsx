@@ -1,4 +1,5 @@
-import Image from 'next/image'
+'use client'
+import Map from './components/Alerts';
 
 export default function Home() {
   return (
