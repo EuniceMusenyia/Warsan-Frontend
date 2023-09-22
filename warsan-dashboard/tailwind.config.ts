@@ -1,4 +1,12 @@
 
+import type { Config } from 'tailwindcss'
+const GoogleFontsPlugin = require('google-fonts-webpack-plugin');
+
+const customFontSize = {
+  '40': '2.5rem'
+
+}
+
 import type { Config } from 'tailwindcss';
 const GoogleFontsPlugin = require('google-fonts-webpack-plugin');
 const customFontSize = {
@@ -24,9 +32,20 @@ const config: Config = {
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],
         amaranth: ['Amaranth', 'sans-serif'],
+
         'inria-sans': ['Inria Sans', 'sans-serif'],
         'kumbh-sans': ['Kumbh Sans', 'sans-serif'],
       },
+
+      },
+      colors: {
+        customBlue: '#044357',
+        customPurple: '#AF339B',
+      },
+      customFontSize:{
+        ...customFontSize
+      }
+
       colors: {
         customBlue: '#044357',
         h1Blue:'1081EB',
@@ -51,11 +70,18 @@ const config: Config = {
       fonts: [
         { family: 'Poppins', variants: ['400', '500', '600', '700'] },
         { family: 'Amaranth', variants: ['400', '700'] },
+
         { family: 'Inria Sans', variants: ['400', '700'] },
         { family: 'Kumbh Sans', variants: ['400', '700'] },
+
       ],
       formats: ['woff2'],
     }),
   ],
+
 };
 export default config;
+
+}
+export default config
+
