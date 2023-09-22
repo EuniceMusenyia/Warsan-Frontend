@@ -1,9 +1,8 @@
 import React, { useEffect } from "react";
 import { Chart } from "chart.js";
-import { IoCaretDownSharp } from "react-icons/io5";
-import { IoCaretDownOutline } from "react-icons/io5";
 import { FaUsers, FaSyringe, FaTimes } from 'react-icons/fa';
 import { FaFilter } from 'react-icons/fa';
+import { BsPersonCircle } from "react-icons/bs";
 
 function CombinedCharts() {
   useEffect(() => {
@@ -18,13 +17,13 @@ function CombinedCharts() {
           label: "Immunization Rate",
           backgroundColor: [
             "#68BBD6",
-            "#DA95F2",
-            "#017D7D",
-            "#6DD18F",
-            "#AB010",
-            "#044357"
+            "#68BBD6",
+            "#68BBD6",
+            "#68BBD6",
+            "#68BBD6",
+            "#68BBD6",
           ],
-          data: [70, 40, 60, 20, 15, 10] 
+          data: [70, 40, 60, 20, 15, 10]
         }]
       },
       options: {
@@ -33,18 +32,18 @@ function CombinedCharts() {
         scales: {
           xAxes: [{
             stacked: true,
-            barPercentage: 0.6, 
+            barPercentage: 0.6,
             categoryPercentage: 0.7,
           }],
           yAxes: [{
             stacked: true,
-            barPercentage: 0.6, 
-            categoryPercentage: 0.2, 
+            barPercentage: 0.6,
+            categoryPercentage: 0.2,
             ticks: {
               beginAtZero: true
             },
             gridLines: {
-              offsetGridLines: true 
+              offsetGridLines: true
             }
           }]
         }
@@ -96,82 +95,83 @@ function CombinedCharts() {
       data: {
         labels: ["January", "February", "March", "April", "May", "June", "July"],
         datasets: [{
-          data: [30, 67, 54, 56, 82, 70, 80], // Replace with your coverage rates for each month
+          data: [30, 67, 54, 56, 82, 70, 80],
           label: "Coverage Rate",
           borderColor: "rgb(62,149,205)",
           backgroundColor: "rgb(62,149,205,0.1)",
         }]
       },
       options: {
-        responsive: true, // Make the chart responsive
-        maintainAspectRatio: false, // Allow the chart to adjust aspect ratio
+        responsive: true,
+        maintainAspectRatio: false,
       },
     });
   }, []);
 
   return (
-    <div className="bg-white">
-      <div className="flex-auto">
-        <a className="text-blue-500 font-bold ml-20 text-2xl">
+    <div className="bg-white pl-10">
+      <div className="flex-auto ml-64">
+        <a className="text-blue-500 font-bold text-2xl">
           Overview
         </a>
 
-        <a className="text-black" style={{ marginLeft: "75%" }}>
-          <FaFilter className="inline-block mr-1" /> Regions
-        </a>
+        <a className="text-bleu-500 " style={{ marginLeft: "68%" }}></a>
 
         <a className="text-blue-500 ml-6">
-          <FaFilter className="inline-block mr-1" /> Vaccines
+          Vaccines <FaFilter className="inline-block mr-1" />
+        </a>
+        <a className="text-blue-500 ml-">
+          Regions <FaFilter className="inline-block mr-1" />
+          <span className="float-right text-5xl w-20 mt-2"><BsPersonCircle /></span>
         </a>
       </div>
-      <div className="flex justify-between px-6 text-black bg-white mt-10 mx-40"> {/* Adjusted padding */}
-        <div className="bg-blue-400 px-4 py-4 border-1 text-white flex items-center">
-          <FaUsers size={24} className="mr-2" /> 
+      <div className="flex justify-between px-6 text-black bg-white mt-10 mx-40 ml-56">
+        <div className="bg-blue-400 px-4 py-4 border-1 text-white flex items-center w-1/4 rounded-xl shadow-2xl border border-blue-500">
+          <FaUsers size={24} className="mr-2" />
           <div>
             <h1>Population</h1>
             <p>17,000,000</p>
           </div>
         </div>
-        <div className="bg-blue-400 px-4 py-4 border-1 text-white flex items-center">
-          <FaSyringe size={24} className="mr-2" /> 
+        <div className="bg-blue-400 px-4 py-4 border-1 text-white flex items-
+            center w-1/4 rounded-xl shadow-2xl border border-blue-500">
+          <FaSyringe size={24} className="mr-2" />
           <div>
             <h1>Immunized</h1>
             <p>400,000</p>
           </div>
         </div>
-        <div className="bg-blue-400 px-4 py-4 border-1 text-white flex items-center">
-          <FaTimes size={24} className="mr-2" /> 
+        <div className="bg-blue-400 px-4 py-4 border-1 text-white flex items-center w-1/4 rounded-xl shadow-2xl border border-blue-500">
+          <FaTimes size={24} className="mr-2" />
           <div>
             <h1>Not Immunized</h1>
             <p>16,600,000</p>
           </div>
         </div>
       </div>
-      <div className="flex flex-row justify-between mx-20 space-y-4 bg-white" style={{ marginTop: "-10%" }}>
-        <div className="division-one">
-          <div className="w-[700px] h-screen flex mx-auto my-auto"> {/* Adjusted width */}
-            <div className="border border-gray-400 rounded-xl w-full h-fit my-auto shadow-xl bg-white">
-              <canvas id="stackedBarChart" width="400" height="300"></canvas> {/* Adjusted width and height */}
-            </div>
+      <div className="flex flex-row ml-32 justify-between mx-20 space-y-4 bg-white" style={{ marginTop: "-10%" }}>
+        <div className="w-[800px] h-screen flex mx-auto my-32">
+          <div className="border border-gray-400 rounded-xl w-full h-[65vh] my-auto shadow-xl bg-white">
+            <canvas id="stackedBarChart" width="800" height="800"></canvas>
           </div>
         </div>
-        <div className="flex flex-col">
-          <div className="division-two">
-            <div className="w-[700px] h-screen flex mx-auto my-auto"> {/* Adjusted width */}
-              <div className="border border-gray-400 rounded-xl w-full h-fit my-auto shadow-xl bg-white pb-2">
-                <canvas id="myChart" width="400" height="300"></canvas> {/* Adjusted width and height */}
-              </div>
+
+        <div className="flex flex-col ">
+          <div className="w-[500px] h-[50vh] flex mx-auto my-auto mt-[180px]"> {/* Reduced height */}
+            <div className="border border-gray-400 rounded-xl w-full h-fit my-auto shadow-xl bg-white ">
+              <canvas id="myChart" width="400" height="300"></canvas>
             </div>
           </div>
-          <div className="w-[700px] h-screen flex my-auto mt-0"> {/* Adjusted width */}
-            <div className="border border-gray-400 pt-0 rounded-xl w-full h-fit my-auto shadow-xl">
-              <canvas id="lineChart" width="400" height="300"></canvas> {/* Adjusted width and height */}
+
+          <div className="w-[500px] h-[50vh] mb-10% flex my-16 mt-[170px]"> {/* Reduced height */}
+            <div className="border border-gray-400 pt-0 rounded-xl md:w-full h-fit my-auto shadow-xl -mt-60">
+              <canvas id="lineChart" width="400" height="300"></canvas>
             </div>
           </div>
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 export default CombinedCharts;

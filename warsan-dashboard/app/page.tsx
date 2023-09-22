@@ -3,12 +3,10 @@
 import Image from 'next/image'
 import CombinedCharts from './components/Overview/page'
 export default function Home() {
-  return (
-    <>
-    <CombinedCharts/>
-    </>
+  return (    
 <main>
   <div>
+  <CombinedCharts/>
   </div>
 </main>
   )
