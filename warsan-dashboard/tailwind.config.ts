@@ -30,6 +30,9 @@ const config: Config = {
       customFontSize:{
         ...customFontSize
       }
+      colors: {
+        customBlue: '#044357',
+      },
     },
   },
   plugins: [
