@@ -1,3 +1,5 @@
+import Image from 'next/image'
+import CHVPage from './CHVRecords/page'
 
 // import Image from 'next/image'
 
@@ -12,8 +14,9 @@ import SignInPage from "./signIn/page"
 
 export default function Home() {
   return (
-<main>
+<main className='bg-white'>
   <div>
+    <CHVPage/>
 
     <ChildRecordsPage/>
     
@@ -23,6 +26,7 @@ export default function Home() {
 </main>
   )
 }
+
 
 
   </div>

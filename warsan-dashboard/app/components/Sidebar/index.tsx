@@ -15,14 +15,19 @@ interface ChildItem {
 interface NavItemProps {
   item: ChildItem;
 }
+
 const NavItem: React.FC<NavItemProps> = ({ item }) => {
   const [isHovered, setIsHovered] = useState(false);
+
   const handleMouseEnter = () => {
     setIsHovered(true);
   };
+
   const handleMouseLeave = () => {
     setIsHovered(false);
   };
+
+
   return (
     <Link href={item.link} passHref>
       <div className='flex items-center my-1 p-1 rounded-lg'>
@@ -36,6 +41,7 @@ const NavItem: React.FC<NavItemProps> = ({ item }) => {
     </Link>
   );
 };
+
 export const Sidebar: React.FC = () => {
   return (
     <div className='flex h-screen fixed'>
@@ -48,9 +54,10 @@ export const Sidebar: React.FC = () => {
         <div className='flex flex-col items-start justify-start'>
           <NavItem item={{ icon: <LuLayoutGrid className="icon md:w-8 md:h-8 w-4 h-4 ml-2" />, label: 'Dashboard', link: '/dashboard' }} />
           <NavItem item={{ icon: <TbAlertTriangle className="icon md:w-8 md:h-8 w-4 h-4 ml-2" />, label: 'Alerts', link: '/alerts' }} />
-          <NavItem item={{ icon: <PiUsersThreeDuotone className="icon md:w-8 md:h-8 w-4 h-4 ml-2 " />, label: 'CHV', link: '/CHVRecords' }} />
+          <NavItem item={{ icon: <PiUsersThreeDuotone className="icon md:w-8 md:h-8 w-4 h-4 ml-2 " />, label: 'CHV', link: '/CHVRecords' }} />          
           <NavItem item={{ icon: <PiUsersFour className="icon md:w-8 md:h-8 w-4 h-4 ml-2" />, label: 'Children', link: '/childRecords' }} />
         </div>
+        
         <div className='mt-auto flex flex-col items-start justify-start'>
         
           <NavItem item={{ icon: <MdLogout className="icon md:w-8 md:h-8 w-4 h-4 -ml-2 " />, label: 'Logout', link: '/logout' }} />
