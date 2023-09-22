@@ -1,5 +1,11 @@
 import type { Config } from 'tailwindcss'
 const GoogleFontsPlugin = require('google-fonts-webpack-plugin');
+
+const customFontSize = {
+  '40': '2.5rem'
+
+}
+
 const config: Config = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -21,6 +27,9 @@ const config: Config = {
         customBlue: '#044357',
         customPurple: '#AF339B',
       },
+      customFontSize:{
+        ...customFontSize
+      }
     },
   },
   plugins: [

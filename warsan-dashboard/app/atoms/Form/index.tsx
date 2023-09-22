@@ -1,9 +1,17 @@
 'use client'
 import React, { useState } from 'react';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
+
+interface Field {
+  id: string;
+  type: string;
+  label: string;
+  pattern?: string;
+}
 
 interface FormAtomProps {
   title: string;
-  fields: object[];
+  fields: Field[];
   buttonText: string;
   children: React.ReactNode;
   isSignUp: boolean;
@@ -37,8 +45,8 @@ const FormAtom = ({
 
   return (
     <div className="flex md:flex-row flex-col h-screen font-poppins">
-      <div className="form-container bg-customBlue text-white flex flex-col items-start w-full h-1/22 md:w-1/2">
-        <div className="flex items-center 2">
+      <div className="form-container bg-customBlue text-white flex flex-col items-start  w-full h-1/22 md:w-1/2">
+        <div className="flex items-center 2 ml-4">
           <img
             src="/warsanlogo.svg"
             alt="Logo"
@@ -50,7 +58,7 @@ const FormAtom = ({
         </div>
 
         <div>
-          <p className="md:text-5xl text-base font-bold mb-8 ml-12 md:ml-32 md:mt-4 mt-4  ">
+          <p className="md:text-5xl text-base font-bold mb-8 ml-12 md:ml-32 md:mt-4 mt-4 font-poppins ">
             Welcome to Rajo Dashboard
           </p>
         </div>
@@ -81,7 +89,6 @@ const FormAtom = ({
               />
             </div>
           ))}
-
           <div className="mb-8" key="password">
             <div className="relative">
               <input
@@ -97,7 +104,7 @@ const FormAtom = ({
                 className="absolute top-1/2 transform -translate-y-1/2 right-4"
                 onClick={() => setShowPassword(!showPassword)}
               >
-                {showPassword ? '🙈' : '👁️'}
+                {showPassword ? <FaEye style={{ color: 'black' }} /> : <FaEyeSlash style={{ color: 'black' }} />}
               </button>
             </div>
           </div>
@@ -118,7 +125,7 @@ const FormAtom = ({
                   className="absolute top-1/2 transform -translate-y-1/2 right-4"
                   onClick={() => setShowConfirmPassword(!showConfirmPassword)}
                 >
-                  {showConfirmPassword ?  '👁️':'🙈'}
+                  {showConfirmPassword ? <FaEye style={{ color: 'black' }} /> : <FaEyeSlash style={{ color: 'black' }} />}
                 </button>
               </div>
               {!isPasswordMatching && (
@@ -128,7 +135,7 @@ const FormAtom = ({
           )}
 
           <button
-            className="text-2xl font-semibold md:mt-12 mb-6 bg-customBlue text-white px-20 py-2  rounded-lg"
+            className="text-2xl font-semibold md:mt-12 mb-6 bg-customBlue text-white font-poppins px-20 py-2  rounded-lg"
             disabled={isSignUp && !isPasswordMatching}
           >
             {buttonText}
