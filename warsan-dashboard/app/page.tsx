@@ -1,6 +1,6 @@
 import React from "react"
-import SignUpPage from "./SignUp/page"
-import SignInPage from "./SignIn/page"
+import SignUpPage from "./signUp/page"
+import SignInPage from "./signIn/page"
 
 export default function Home() {
   return (
