@@ -121,9 +121,9 @@ const ChildRecordsPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(event.target.value);
-    setCurrentPage(1); // Reset to first page when the search query changes
+    setCurrentPage(1); 
   };
-  const numColumns = 5; // Specify the number of columns here including 'Number_of_vaccines'
+  const numColumns = 5;
   const columns = ['Full_name','Number_of_vaccines', 'Location', 'Guardian', 'Phone_number'];
   const columnDisplayNames: string[] = ['Full Name','Number of Vaccines', 'Location', 'Guardian', 'Phone Number'];
   const filteredChildRecords = ChildRecordData.filter((item) => {
