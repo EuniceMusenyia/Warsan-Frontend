@@ -1,9 +1,6 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import { Sidebar } from './components/Sidebar'
-
-const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -17,13 +14,21 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className + "flex"}>
-        <div>
-        <Sidebar/>
-        {children}
-        </div>
-        </body>
+      <head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Amaranth:wght@400;700&family=Inria+Sans:wght@400;700&family=Kumbh+Sans:wght@400;700&display=swap"
+          rel="stylesheet"
+        />
 
+      </head>
+      <body>
+        <div>
+          <Sidebar />
+        </div>
+        <div className="content">
+          {children}
+        </div>
+      </body>
     </html>
   )
 }
