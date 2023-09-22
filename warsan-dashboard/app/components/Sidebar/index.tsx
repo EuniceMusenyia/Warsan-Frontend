@@ -1,3 +1,4 @@
+
 'use client'
 import Link from 'next/link';
 import React, { ReactElement, useState } from 'react';
@@ -6,13 +7,11 @@ import { LuLayoutGrid } from 'react-icons/lu';
 import { TbAlertTriangle } from 'react-icons/tb';
 import { PiUsersThreeDuotone, PiUsersFour } from 'react-icons/pi';
 import { MdLogout } from 'react-icons/md';
-
 interface ChildItem {
   icon: ReactElement;
   label: string;
   link: string;
 }
-
 interface NavItemProps {
   item: ChildItem;
 }
@@ -27,6 +26,7 @@ const NavItem: React.FC<NavItemProps> = ({ item }) => {
   const handleMouseLeave = () => {
     setIsHovered(false);
   };
+
 
   return (
     <Link href={item.link} passHref>
@@ -54,12 +54,12 @@ export const Sidebar: React.FC = () => {
         <div className='flex flex-col items-start justify-start'>
           <NavItem item={{ icon: <LuLayoutGrid className="icon md:w-8 md:h-8 w-4 h-4 ml-2" />, label: 'Dashboard', link: '/dashboard' }} />
           <NavItem item={{ icon: <TbAlertTriangle className="icon md:w-8 md:h-8 w-4 h-4 ml-2" />, label: 'Alerts', link: '/alerts' }} />
-          <NavItem item={{ icon: <PiUsersThreeDuotone className="icon md:w-8 md:h-8 w-4 h-4 ml-2 " />, label: 'CHV', link: '/CHVRecords' }} />
-          <NavItem item={{ icon: <PiUsersFour className="icon md:w-8 md:h-8 w-4 h-4 ml-2" />, label: 'Children', link: '/children' }} />
+          <NavItem item={{ icon: <PiUsersThreeDuotone className="icon md:w-8 md:h-8 w-4 h-4 ml-2 " />, label: 'CHV', link: '/CHVRecords' }} />          
+          <NavItem item={{ icon: <PiUsersFour className="icon md:w-8 md:h-8 w-4 h-4 ml-2" />, label: 'Children', link: '/childRecords' }} />
         </div>
-
+        
         <div className='mt-auto flex flex-col items-start justify-start'>
-          
+        
           <NavItem item={{ icon: <MdLogout className="icon md:w-8 md:h-8 w-4 h-4 -ml-2 " />, label: 'Logout', link: '/logout' }} />
         </div>
       </div>
