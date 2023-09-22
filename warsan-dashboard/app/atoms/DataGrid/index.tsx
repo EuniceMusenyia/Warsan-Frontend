@@ -28,7 +28,7 @@ const DataGrid = ({ data, columns, columnDisplayNames, currentPage, pageSize }: 
       <tbody>
         {currentData.map((item, index) => (
           <tr key={index} className='border border-gray-300'>
-            <td className='border border-customBlue px-4 py-2 flex-1'>
+            <td className='border border-customBlue px-4 py-4 flex-1'>
               {/* <input
                 type="checkbox"
                 checked={checkboxState[index]}
