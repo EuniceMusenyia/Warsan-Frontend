@@ -28,7 +28,7 @@ const CHVRegistrationForm = () => {
         <Link href='/CHVRecords'>
           <button
             type='submit'
-            className='bg-customBlue text-white md:px-16 md: py-3  mt-6 rounded-lg'
+            className='bg-customBlue text-white md:px-20 md: py-3  mt-6 rounded-lg'
           >
             Register
           </button>
