@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useEffect } from "react";
 import { Chart } from "chart.js";
 import { FaUsers, FaSyringe, FaTimes } from 'react-icons/fa';

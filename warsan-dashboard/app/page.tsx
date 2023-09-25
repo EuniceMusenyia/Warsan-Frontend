@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import CombinedCharts from './components/Overview/page'
+import CombinedCharts from './overview/page'
 export default function Home() {
   return (    
 <main>
