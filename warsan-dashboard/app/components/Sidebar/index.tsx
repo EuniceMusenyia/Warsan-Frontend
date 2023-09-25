@@ -59,7 +59,7 @@ export const Sidebar: React.FC = () => {
         </div>
 
         <div className='mt-auto flex flex-col items-start justify-start mr-4'>
-          <NavItem item={{ icon: <RiAccountCircleLine className="icon md:w-8 md:h-8 w-4 h-4 -ml-2  " />, label: 'Profile' }} />
+          {/* <NavItem item={{ icon: <RiAccountCircleLine className="icon md:w-8 md:h-8 w-4 h-4 -ml-2  " />, label: 'Profile' }} /> */}
           <NavItem item={{ icon: <MdLogout className="icon md:w-8 md:h-8 w-4 h-4 -ml-2 " />, label: 'Logout' }} />
         </div>
       </div>
