@@ -5,8 +5,9 @@ interface DataGridProps {
   columnDisplayNames: Array<string>;
   currentPage: number;
   pageSize: number;
+  isCheckBox?:boolean
 }
-const DataGrid = ({ data, columns, columnDisplayNames, currentPage, pageSize }: DataGridProps) => {
+const DataGrid = ({ data, columns, columnDisplayNames, currentPage, pageSize, isCheckBox }: DataGridProps) => {
   const startIndex = (currentPage - 1) * pageSize;
   const endIndex = startIndex + pageSize;
   const currentData = data.slice(startIndex, endIndex);
@@ -29,11 +30,11 @@ const DataGrid = ({ data, columns, columnDisplayNames, currentPage, pageSize }: 
         {currentData.map((item, index) => (
           <tr key={index} className='border border-gray-300'>
             <td className='border border-customBlue px-4 py-4 flex-1'>
-              {/* <input
-                type="checkbox"
+         { isCheckBox && <input
+                type="checkbox" className='mr-3 h-4 w-4 rounded-lg font-bold'
                 checked={checkboxState[index]}
                 onChange={() => handleCheckboxChange(index)}
-              /> */}
+              /> }
             
               {item['region']}
             </td>

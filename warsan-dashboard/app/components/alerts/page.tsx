@@ -191,10 +191,10 @@ const Map: React.FC = () => {
       </div>
 
       <div className="flex flex-1 h-[1000px] mt-20">
-        <div id="map" className="bg-white w-1/3 ml-96 py-10 h-[850px] mb-40" />
+        <div id="map" className="bg-white w-1/3 ml-80 py-10 h-[850px] mb-40" />
 
         <div className="flex-1 bg-white p-4 w-[1700px] mt-0 mb-10 ml-40">
-          <table className='ml-20 w-[500px] h-[850px] text-18 '>
+          <table className='ml-20 w-[700px] h-[950px] text-18 '>
             <tbody>
             <DataGrid
               data={filteredData}
