@@ -16,6 +16,7 @@ interface NavItemProps {
   item: ChildItem;
 }
 
+
 const NavItem: React.FC<NavItemProps> = ({ item }) => {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -26,6 +27,7 @@ const NavItem: React.FC<NavItemProps> = ({ item }) => {
   const handleMouseLeave = () => {
     setIsHovered(false);
   };
+
 
 
   return (
@@ -54,12 +56,13 @@ export const Sidebar: React.FC = () => {
         <div className='flex flex-col items-start justify-start'>
           <NavItem item={{ icon: <LuLayoutGrid className="icon md:w-8 md:h-8 w-4 h-4 ml-2" />, label: 'Dashboard', link: '/dashboard' }} />
           <NavItem item={{ icon: <TbAlertTriangle className="icon md:w-8 md:h-8 w-4 h-4 ml-2" />, label: 'Alerts', link: '/alerts' }} />
-          <NavItem item={{ icon: <PiUsersThreeDuotone className="icon md:w-8 md:h-8 w-4 h-4 ml-2 " />, label: 'CHV', link: '/CHVRecords' }} />          
-          <NavItem item={{ icon: <PiUsersFour className="icon md:w-8 md:h-8 w-4 h-4 ml-2" />, label: 'Children', link: '/childRecords' }} />
+
+          <NavItem item={{ icon: <PiUsersThreeDuotone className="icon md:w-8 md:h-8 w-4 h-4 ml-2 " />, label: 'CHV', link: '/CHVRecords' }} />
+          <NavItem item={{ icon: <PiUsersFour className="icon md:w-8 md:h-8 w-4 h-4 ml-2" />, label: 'Children', link: '/children' }} />
         </div>
-        
         <div className='mt-auto flex flex-col items-start justify-start'>
-        
+
+       
           <NavItem item={{ icon: <MdLogout className="icon md:w-8 md:h-8 w-4 h-4 -ml-2 " />, label: 'Logout', link: '/logout' }} />
         </div>
       </div>

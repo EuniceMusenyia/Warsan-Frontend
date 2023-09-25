@@ -1,3 +1,7 @@
+
+'use client'
+import Map from './components/alerts/page';
+
 import Image from 'next/image'
 import CHVPage from './CHVRecords/page'
 
@@ -12,24 +16,20 @@ import SignUpPage from "./signUp/page"
 import SignInPage from "./signIn/page"
 
 
+
 export default function Home() {
   return (
 <main className='bg-white'>
   <div>
+
+  <Map/>    
+
     <CHVPage/>
 
     <ChildRecordsPage/>
     
     
-    
-  </div>
-</main>
-  )
-}
-
-
-
-  </div>
+ </div>
 </main>
   )
 };
