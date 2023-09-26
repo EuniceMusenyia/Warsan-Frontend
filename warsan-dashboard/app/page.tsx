@@ -1,10 +1,10 @@
-import CombinedCharts from "./overview/page";
+import Overview from "./components/overview"
 
 export default function Home() {
   return (
 <main className='bg-white'>
   <div>
-    <CombinedCharts/>    
+    <Overview/>
  </div>
 </main>
   )

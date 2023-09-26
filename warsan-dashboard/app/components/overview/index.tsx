@@ -6,7 +6,7 @@ import { FaUsers, FaSyringe, FaTimes } from 'react-icons/fa';
 import { FaChevronDown} from 'react-icons/fa';
 import { BsPersonCircle } from "react-icons/bs";
 
-function CombinedCharts() {
+function Overview() {
   useEffect(() => {
     // Stacked Bar Chart
     var stackedCtx = document.getElementById('stackedBarChart').getContext('2d');
@@ -186,4 +186,4 @@ function CombinedCharts() {
   )
 }
 
-export default CombinedCharts;
+export default Overview;
