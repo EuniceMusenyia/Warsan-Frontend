@@ -6,17 +6,23 @@ interface DataGridProps {
   columnDisplayNames: Array<string>;
   currentPage: number;
   pageSize: number;
-
-  isCheckBox?:boolean
+  isCheckBox?: boolean;
+  itemColumnKey: string; // New prop for dynamic item column
 }
-const DataGrid = ({ data, columns, columnDisplayNames, currentPage, pageSize, isCheckBox }: DataGridProps) => {
+
+const DataGrid = ({
+  data,
+  columns,
+  columnDisplayNames,
+  currentPage,
+  pageSize,
+  isCheckBox,
+  itemColumnKey, // New prop for dynamic item column
+}: DataGridProps) => {
   const startIndex = (currentPage - 1) * pageSize;
   const endIndex = startIndex + pageSize;
   const currentData = data.slice(startIndex, endIndex);
   const [checkboxState, setCheckboxState] = useState(currentData.map(() => false));
-
-}
-
 
   const handleCheckboxChange = (index: number) => {
     const updatedCheckboxState = [...checkboxState];
@@ -29,28 +35,29 @@ const DataGrid = ({ data, columns, columnDisplayNames, currentPage, pageSize, is
       <thead>
         <tr>
           {columnDisplayNames.map((columnName, index) => (
-            <th key={index} className='border border-customBlue px-4 py-2 font-bold text-start flex-1'>{columnName}</th>
-
+            <th key={index} className='border border-customBlue px-4 py-2 font-bold text-start flex-1'>
+              {columnName}
+            </th>
           ))}
         </tr>
       </thead>
       <tbody>
-        {currentData.map((item, index) => (
-
-          <tr key={index} className='border border-gray-300'>
+        {currentData.map((item, rowIndex) => (
+          <tr key={rowIndex} className='border border-gray-300'>
             <td className='border border-customBlue px-4 py-4 flex-1'>
-         { isCheckBox && <input
-                type="checkbox" className='mr-3 h-4 w-4 rounded-lg font-bold'
-                checked={checkboxState[index]}
-                onChange={() => handleCheckboxChange(index)}
-              /> }
-            
-              {item['region']}
+              {isCheckBox && (
+                <input
+                  type="checkbox"
+                  className='mr-3 h-4 w-4 rounded-lg font-bold'
+                  checked={checkboxState[rowIndex]}
+                  onChange={() => handleCheckboxChange(rowIndex)}
+                />
+              )}
+              {item[itemColumnKey]} {/* Use the dynamic item column key */}
             </td>
-            {columns.slice(1).map((column, columnIndex) => (
+            {columns.slice(1).map((columnKey, columnIndex) => (
               <td key={columnIndex} className='border border-customBlue px-4 py-2 flex-1'>
-
-                {item[column]}
+                {item[columnKey]}
               </td>
             ))}
           </tr>
@@ -61,4 +68,3 @@ const DataGrid = ({ data, columns, columnDisplayNames, currentPage, pageSize, is
 };
 
 export default DataGrid;
-
