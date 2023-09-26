@@ -1,11 +1,11 @@
 'use client'
+
 import Link from 'next/link';
 import React, { useState, ChangeEvent } from 'react';
-import DataGrid from '../atoms/DataGrid';
+import DataGrid from '../atoms/DataGrid'; // Import the DataGrid component
 import SearchBar from '../atoms/Searchbar';
 
 const PAGE_SIZE = window.innerWidth < 768 ? 15 : 14;
-
 
 const CHVData = [
   {
@@ -16,11 +16,11 @@ const CHVData = [
     is_active: true
   },
   {
-    Full_name: "Aniso Kilas",
-    Location: "Xamar",
-    Hospital: "Medina",
-    phone_number: "+252678123456",
-    is_active: true
+    Full_name: "Mohamed Ali",
+    Location: "Hargeisa",
+    Hospital: "Main Hospital",
+    phone_number: "+252678987654",
+    is_active: false
   },
   {
     Full_name: "Aniso Kilas",
@@ -30,12 +30,13 @@ const CHVData = [
     is_active: true
   },
   {
-    Full_name: "Aniso Kilas",
-    Location: "Xamar",
-    Hospital: "Medina",
-    phone_number: "+252678123456",
-    is_active: true
+    Full_name: "Mohamed Ali",
+    Location: "Hargeisa",
+    Hospital: "Main Hospital",
+    phone_number: "+252678987654",
+    is_active: false
   },
+  
   {
     Full_name: "Aniso Kilas",
     Location: "Xamar",
@@ -44,12 +45,13 @@ const CHVData = [
     is_active: true
   },
   {
-    Full_name: "Aniso Kilas",
-    Location: "Xamar",
-    Hospital: "Medina",
-    phone_number: "+252678123456",
-    is_active: true
+    Full_name: "Mohamed Ali",
+    Location: "Hargeisa",
+    Hospital: "Main Hospital",
+    phone_number: "+252678987654",
+    is_active: false
   },
+  
   {
     Full_name: "Aniso Kilas",
     Location: "Xamar",
@@ -58,12 +60,13 @@ const CHVData = [
     is_active: true
   },
   {
-    Full_name: "Aniso Kilas",
-    Location: "Xamar",
-    Hospital: "Medina",
-    phone_number: "+252678123456",
-    is_active: true
+    Full_name: "Mohamed Ali",
+    Location: "Hargeisa",
+    Hospital: "Main Hospital",
+    phone_number: "+252678987654",
+    is_active: false
   },
+  
   {
     Full_name: "Aniso Kilas",
     Location: "Xamar",
@@ -72,11 +75,11 @@ const CHVData = [
     is_active: true
   },
   {
-    Full_name: "Aniso Kilas",
-    Location: "Xamar",
-    Hospital: "Medina",
-    phone_number: "+252678123456",
-    is_active: true
+    Full_name: "Mohamed Ali",
+    Location: "Hargeisa",
+    Hospital: "Main Hospital",
+    phone_number: "+252678987654",
+    is_active: false
   },
   {
     Full_name: "Aniso Kilas",
@@ -85,67 +88,8 @@ const CHVData = [
     phone_number: "+252678123456",
     is_active: true
   },
-  {
-    Full_name: "Aniso Kilas",
-    Location: "Xamar",
-    Hospital: "Medina",
-    phone_number: "+252678123456",
-    is_active: true
-  },
-  {
-    Full_name: "Aniso Kilas",
-    Location: "Xamar",
-    Hospital: "Medina",
-    phone_number: "+252678123456",
-    is_active: true
-  },
-  {
-    Full_name: "Aniso Kilas",
-    Location: "Xamar",
-    Hospital: "Medina",
-    phone_number: "+252678123456",
-    is_active: true
-  },
-  {
-    Full_name: "Aniso Kilas",
-    Location: "Xamar",
-    Hospital: "Medina",
-    phone_number: "+252678123456",
-    is_active: true
-  },
-  {
-    Full_name: "Aniso Kilas",
-    Location: "Xamar",
-    Hospital: "Medina",
-    phone_number: "+252678123456",
-    is_active: true
-  },
-  {
-    Full_name: "Aniso Kilas",
-    Location: "Xamar",
-    Hospital: "Medina",
-    phone_number: "+252678123456",
-    is_active: true
-  },
-  {
-    Full_name: "Aniso Kilas",
-    Location: "Xamar",
-    Hospital: "Medina",
-    phone_number: "+252678123456",
-    is_active: true
-  },
-  {
-    Full_name: "Aniso Kilas",
-    Location: "Xamar",
-    Hospital: "Medina",
-    phone_number: "+252678123456",
-    is_active: true
-  },
-
-
-
+ 
 ];
-
 
 const CHVPage = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -153,7 +97,7 @@ const CHVPage = () => {
 
   const handleSearchChange = (event: ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(event.target.value);
-    setCurrentPage(1); 
+    setCurrentPage(1);
   };
 
   const numColumns = 4;
@@ -186,17 +130,20 @@ const CHVPage = () => {
       <SearchBar
         searchQuery={searchQuery}
         handleSearchChange={handleSearchChange}
-        placeholder="Search by name , location or hospital"
+        placeholder="Search by name, location, or hospital"
       />
 
       <table className='w-4/5 border-collapse text-18'>
         <tbody>
+          {/* Update DataGrid component usage */}
           <DataGrid
             data={filteredCHV}
             columns={columns}
             columnDisplayNames={columnDisplayNames}
             currentPage={currentPage}
             pageSize={PAGE_SIZE}
+            isCheckBox={true} // Add this prop to enable checkboxes
+            itemColumnKey="Full_name" // Add this prop to specify the item column key
           />
         </tbody>
       </table>
