@@ -93,7 +93,7 @@ export const Sidebar: React.FC = () => {
             item={{
               icon: <PiUsersThreeDuotone className="icon md:w-8 md:h-8 w-4 h-4 ml-2" />,
               label: "CHV",
-              link: "/CHVRecords",
+              link: "/chvRecords",
             }}
             isActive={activePage === "/CHVRecords"}
             onClick={() => handleNavItemClicked("/CHVRecords")}
