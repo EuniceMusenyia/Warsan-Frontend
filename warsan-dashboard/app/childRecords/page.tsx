@@ -3,135 +3,28 @@
 import React, { useState } from 'react';
 import DataGrid from '../atoms/DataGrid';
 import SearchBar from '../atoms/searchbar';
+import useGetChildRecords from '../hooks/getChildRecord/useGetChildRecords';
 const PAGE_SIZE = window.innerWidth < 768 ? 15 : 15;
-
-const ChildRecordData = [
-  {
-    Full_name: "Abdi Mohamed",
-    Number_of_vaccines: 6,
-    Location: "Mogadishu",
-    Guardian: "Amina Ahmed",
-    Phone_number: "+252123456789"
-  },
-  {
-    Full_name: "Abdi Mohamed",
-    Number_of_vaccines: 6,
-    Location: "Mogadishu",
-    Guardian: "Amina Ahmed",
-    Phone_number: "+252123456789"
-  },
-  {
-    Full_name: "Abdi Mohamed",
-    Number_of_vaccines: 6,
-    Location: "Mogadishu",
-    Guardian: "Amina Ahmed",
-    Phone_number: "+252123456789"
-  },
-  {
-    Full_name: "Abdi Mohamed",
-    Number_of_vaccines: 6,
-    Location: "Mogadishu",
-    Guardian: "Amina Ahmed",
-    Phone_number: "+252123456789"
-  },
-  {
-    Full_name: "Abdi Mohamed",
-    Number_of_vaccines: 6,
-    Location: "Mogadishu",
-    Guardian: "Amina Ahmed",
-    Phone_number: "+252123456789"
-  },
-
-  {
-    Full_name: "Abdi Mohamed",
-    Number_of_vaccines: 6,
-    Location: "Mogadishu",
-    Guardian: "Amina Ahmed",
-    Phone_number: "+252123456789"
-  },
-  {
-    Full_name: "Abdi Mohamed",
-    Number_of_vaccines: 6,
-    Location: "Mogadishu",
-    Guardian: "Amina Ahmed",
-    Phone_number: "+252123456789"
-  },
-
-  {
-    Full_name: "Abdi Mohamed",
-    Number_of_vaccines: 6,
-    Location: "Mogadishu",
-    Guardian: "Amina Ahmed",
-    Phone_number: "+252123456789"
-  },
-
-
-    {
-    Full_name: "Abdi Mohamed",
-    Number_of_vaccines: 6,
-    Location: "Mogadishu",
-    Guardian: "Amina Ahmed",
-    Phone_number: "+252123456789"
-  },
-
-  {
-    Full_name: "Abdi Mohamed",
-    Number_of_vaccines: 6,
-    Location: "Mogadishu",
-    Guardian: "Amina Ahmed",
-    Phone_number: "+252123456789"
-  },
-
-  {
-    Full_name: "Abdi Mohamed",
-    Number_of_vaccines: 6,
-    Location: "Mogadishu",
-    Guardian: "Amina Ahmed",
-    Phone_number: "+252123456789"
-  },
-
-    {
-    Full_name: "Abdi Mohamed",
-    Number_of_vaccines: 6,
-    Location: "Mogadishu",
-    Guardian: "Amina Ahmed",
-    Phone_number: "+252123456789"
-  },
-  {
-    Full_name: "Abdi Mohamed",
-    Number_of_vaccines: 6,
-    Location: "Mogadishu",
-    Guardian: "Amina Ahmed",
-    Phone_number: "+252123456789"
-  },
-
-  {
-    Full_name: "Abdi Mohamed",
-    Number_of_vaccines: 6,
-    Location: "Mogadishu",
-    Guardian: "Amina Ahmed",
-    Phone_number: "+252123456789"
-  },
-
- 
-  
-];
 const ChildRecordsPage = () => {
+  const ChildData = useGetChildRecords()
   const [searchQuery, setSearchQuery] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(event.target.value);
-    setCurrentPage(1); 
+    setCurrentPage(1);
   };
   const numColumns = 5;
-  const columns = ['Full_name','Number_of_vaccines', 'Location', 'Guardian', 'Phone_number'];
-  const columnDisplayNames: string[] = ['Full Name','Number of Vaccines', 'Location', 'Guardian', 'Phone Number'];
-  const filteredChildRecords = ChildRecordData.filter((item) => {
+  const columns = [ 'child_first_name','child_last_name','child_date_of_birth','child_location','child_phone_number','guardian_name'];
+  const columnDisplayNames: string[] = ['First Name','Last Name','Date of Birth','Location','Phone Number','Guardian'];
+  const filteredChildRecords = ChildData?.child.filter((item) => {
     const searchTerm = searchQuery.toLowerCase();
     return (
-      item.Full_name.toLowerCase().includes(searchTerm) ||
-      item.Location.toLowerCase().includes(searchTerm) ||
-      item.Guardian.toLowerCase().includes(searchTerm)
+      item.child_first_name.toLowerCase().includes(searchTerm) ||
+      item.child_last_name.toLowerCase().includes(searchTerm) ||
+      item.child_date_of_birth.toLowerCase().includes(searchTerm) ||
+      item.child_location.toLowerCase().includes(searchTerm) ||
+      item.child_phone_number.toLowerCase().includes(searchTerm) ||
+      item.guardian_name.toLowerCase().includes(searchTerm)
     );
   });
   const totalItems = filteredChildRecords.length;
@@ -157,6 +50,8 @@ const ChildRecordsPage = () => {
             columnDisplayNames={columnDisplayNames}
             currentPage={currentPage}
             pageSize={PAGE_SIZE}
+            isCheckBox={true} 
+            itemColumnKey="child_first_name" 
           />
         </tbody>
       </table>
