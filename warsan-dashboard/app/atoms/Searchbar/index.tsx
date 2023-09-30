@@ -8,7 +8,7 @@ interface SearchBarProps {
 
 const SearchBar = ({ searchQuery, handleSearchChange, placeholder }: SearchBarProps) => {
   return (
-    <div className="relative">
+    <div className="">
       <input
         type="text"
 
