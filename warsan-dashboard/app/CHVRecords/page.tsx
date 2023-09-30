@@ -3,6 +3,7 @@ import Link from 'next/link';
 import React, { useState, ChangeEvent } from 'react';
 import DataGrid from '../atoms/DataGrid';
 import SearchBar from '../atoms/Searchbar';
+import { Sidebar } from '../components/Sidebar';
 const PAGE_SIZE = 14;
 const CHVData = [
   {
@@ -107,6 +108,8 @@ const CHVPage = () => {
     setCurrentPage(page);
   };
   return (
+    <div>
+      <Sidebar/>
     <div className={`CHV bg-white ml-96 font-kumbh-sans`}>
       <h1 className='md:text-30 text-base -ml-96 text-center font-inria-sans text-customBlue py-8 mb- font-bold'>
         Community Health Volunteers
@@ -153,6 +156,7 @@ const CHVPage = () => {
         </Link>
       </div>
     </div>
+  </div>
   );
 };
 export default CHVPage;

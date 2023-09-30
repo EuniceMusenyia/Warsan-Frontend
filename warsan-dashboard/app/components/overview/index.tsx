@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { Chart } from 'chart.js';
 import useGetChildRecords from '@/app/hooks/useGetChildRecords';
+import { Sidebar } from '../Sidebar';
 import {
   FaUsers,
   FaSyringe,
@@ -170,6 +171,8 @@ function Overview() {
   }, [child]);
 
   return (
+    <div>
+      <Sidebar/>
     <div className="bg-white pl-10">
       <div className="flex-auto ml-64 pt-8">
         <a className="text-blue-500 font-bold text-4xl">Overview</a>
@@ -222,6 +225,8 @@ function Overview() {
         </div>
       </div>
     </div>
+    </div>
+
   );
 }
 
