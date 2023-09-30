@@ -29,8 +29,9 @@ const NavItem: React.FC<NavItemProps> = ({ item, isActive, onClick }) => {
   const handleMouseLeave = () => {
     setIsHovered(false);
   };
+  const href = item.link || '';
   return (
-    <Link href={item.link} passHref>
+    <Link href={href} passHref>
       <div
         className={`flex items-center my-1 p-1 rounded-lg ${
           isActive ? "" : ""

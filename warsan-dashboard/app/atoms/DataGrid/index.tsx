@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
 
+import React, { useState } from 'react';
 interface DataGridProps {
   data: Array<any>;
   columns: Array<string>;
@@ -9,7 +9,6 @@ interface DataGridProps {
   isCheckBox?: boolean;
   itemColumnKey: string; // New prop for dynamic item column
 }
-
 const DataGrid = ({
   data,
   columns,
@@ -23,13 +22,11 @@ const DataGrid = ({
   const endIndex = startIndex + pageSize;
   const currentData = data.slice(startIndex, endIndex);
   const [checkboxState, setCheckboxState] = useState(currentData.map(() => false));
-
   const handleCheckboxChange = (index: number) => {
     const updatedCheckboxState = [...checkboxState];
     updatedCheckboxState[index] = !updatedCheckboxState[index];
     setCheckboxState(updatedCheckboxState);
   };
-
   return (
     <table className='w-full border-collapse'>
       <thead>
@@ -66,5 +63,11 @@ const DataGrid = ({
     </table>
   );
 };
-
 export default DataGrid;
+
+
+
+
+
+
+

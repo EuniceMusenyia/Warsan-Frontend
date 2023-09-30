@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 
 import DataGrid from '../atoms/DataGrid';
-import SearchBar from '../atoms/searchbar';
+import SearchBar from '../atoms/Searchbar';
 import useGetChildRecords from '../hooks/getChildRecord/useGetChildRecords';
 const PAGE_SIZE = window.innerWidth < 768 ? 15 : 15;
 
@@ -20,7 +20,7 @@ const ChildRecordsPage = () => {
     setCurrentPage(1);
   };
 
-  const numColumns = 
+  const numColumns = 5;
   const columns = [ 'child_first_name','child_last_name','child_date_of_birth','child_location','child_phone_number','guardian_name'];
   const columnDisplayNames: string[] = ['First Name','Last Name','Date of Birth','Location','Phone Number','Guardian'];
   const filteredChildRecords = ChildData?.child.filter((item) => {
@@ -61,7 +61,7 @@ const ChildRecordsPage = () => {
             columns={columns}
             columnDisplayNames={columnDisplayNames}
             currentPage={currentPage}
-            pageSize={PAGE_SIZE
+            pageSize={PAGE_SIZE}
             isCheckBox={true} 
             itemColumnKey="child_first_name"   />
         </tbody>
