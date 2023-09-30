@@ -1,26 +1,22 @@
 'use client'
-
 import React, { useState } from "react";
 import Link from "next/link";
 import { LuLayoutGrid } from "react-icons/lu";
 import { TbAlertTriangle } from "react-icons/tb";
 import { PiUsersThreeDuotone, PiUsersFour } from "react-icons/pi";
-import { MdLogout } from "react-icons/md";
-import Logout from "../logout";
-
+import { MdLogout } from "react-icons/md"
+import Logout from "../Logout";
 interface ChildItem {
   icon: React.ReactElement;
   label: string;
   link?: string;
   onClick?: () => void;
 }
-
 interface NavItemProps {
   item: ChildItem;
   isActive: boolean;
   onClick: () => void;
 }
-
 const NavItem: React.FC<NavItemProps> = ({ item, isActive, onClick }) => {
   const [isHovered, setIsHovered] = useState(false);
   const handleMouseEnter = () => {
@@ -50,19 +46,15 @@ const NavItem: React.FC<NavItemProps> = ({ item, isActive, onClick }) => {
     </Link>
   );
 };
-
 export const Sidebar: React.FC = () => {
   const [showLogoutModal, setShowLogoutModal] = useState(false);
   const [activePage, setActivePage] = useState("/");
-
   const handleLogoutConfirmation = () => {
     setShowLogoutModal(true);
   };
-
   const handleNavItemClicked = (link: string) => {
     setActivePage(link);
   };
-
   return (
     <div className="flex h-screen fixed">
       <div className="flex flex-col w-20 md:w-60 p-2 sm:p-3 md:p-5 bg-customBlue items-center justify-center font-poppins">

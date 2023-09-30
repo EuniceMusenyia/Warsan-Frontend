@@ -1,27 +1,30 @@
 'use client'
-
 import React, { useState } from 'react';
 
 import DataGrid from '../atoms/DataGrid';
 import SearchBar from '../atoms/Searchbar';
 import useGetChildRecords from '../hooks/getChildRecord/useGetChildRecords';
-const PAGE_SIZE = window.innerWidth < 768 ? 15 : 15; 
+const PAGE_SIZE = 15; 
+
     
+
 const ChildRecordsPage = () => {
   const ChildData = useGetChildRecords()
   const [searchQuery, setSearchQuery] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
-
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(event.target.value);
     setCurrentPage(1);
   };
-
   const numColumns = 5;
+ 
+  
+
   const columns = [ 'child_first_name','child_last_name','child_date_of_birth','child_location','child_phone_number','guardian_name'];
   const columnDisplayNames: string[] = ['First Name','Last Name','Date of Birth','Location','Phone Number','Guardian'];
   const filteredChildRecords = ChildData?.child.filter((item) => {
   
+
     const searchTerm = searchQuery.toLowerCase();
     return (
       item.child_first_name.toLowerCase().includes(searchTerm) ||
@@ -32,14 +35,11 @@ const ChildRecordsPage = () => {
       item.guardian_name.toLowerCase().includes(searchTerm)
     );
   });
-
   const totalItems = filteredChildRecords.length;
   const totalPages = Math.ceil(totalItems / PAGE_SIZE);
-
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
   };
-
   return (
     <div className={`ChildRecords bg-white ml-72 mr-40 font-kumbh-sans`}>
       <h1 className='md:text-4xl text-base -ml-96 text-center font-inria-sans text-customBlue py-8 mb- font-bold'>
@@ -52,7 +52,7 @@ const ChildRecordsPage = () => {
       />
       <table className='w-full border-collapse'>
         <tbody>
-          {/* Update DataGrid component usage */}
+        
           <DataGrid
             data={filteredChildRecords}
             columns={columns}
@@ -60,7 +60,9 @@ const ChildRecordsPage = () => {
             currentPage={currentPage}
             pageSize={PAGE_SIZE}
             isCheckBox={true} 
+
             itemColumnKey="child_first_name"   />
+
         </tbody>
       </table>
       <div className='flex justify-center mt-4 -ml-60'>
@@ -79,5 +81,4 @@ const ChildRecordsPage = () => {
     </div>
   );
 };
-
 export default ChildRecordsPage;

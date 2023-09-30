@@ -1,5 +1,6 @@
 'use client'
 
+
 import React from "react";
 interface LogoutProps {
   isOpen: boolean;

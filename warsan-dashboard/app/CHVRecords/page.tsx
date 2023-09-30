@@ -3,7 +3,7 @@ import Link from 'next/link';
 import React, { useState, ChangeEvent } from 'react';
 import DataGrid from '../atoms/DataGrid';
 import SearchBar from '../atoms/Searchbar';
-const PAGE_SIZE = window.innerWidth < 768 ? 15 : 14;
+const PAGE_SIZE = 14;
 const CHVData = [
   {
     Full_name: "Aniso Kilas",
