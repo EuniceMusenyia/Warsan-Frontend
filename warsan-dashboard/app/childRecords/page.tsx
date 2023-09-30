@@ -5,10 +5,7 @@ import React, { useState } from 'react';
 import DataGrid from '../atoms/DataGrid';
 import SearchBar from '../atoms/Searchbar';
 import useGetChildRecords from '../hooks/getChildRecord/useGetChildRecords';
-const PAGE_SIZE = window.innerWidth < 768 ? 15 : 15;
-
-
- 
+const PAGE_SIZE = window.innerWidth < 768 ? 15 : 15; 
     
 const ChildRecordsPage = () => {
   const ChildData = useGetChildRecords()
