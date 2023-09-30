@@ -1,11 +1,11 @@
 'use client'
 import React, { useState } from 'react';
 
-
 import DataGrid from '../atoms/DataGrid';
 import SearchBar from '../atoms/Searchbar';
 import useGetChildRecords from '../hooks/getChildRecord/useGetChildRecords';
-const PAGE_SIZE = window.innerWidth < 768 ? 15 : 15; 
+const PAGE_SIZE = 15; 
+
     
 
 const ChildRecordsPage = () => {
@@ -17,6 +17,8 @@ const ChildRecordsPage = () => {
     setCurrentPage(1);
   };
   const numColumns = 5;
+ 
+  
 
   const columns = [ 'child_first_name','child_last_name','child_date_of_birth','child_location','child_phone_number','guardian_name'];
   const columnDisplayNames: string[] = ['First Name','Last Name','Date of Birth','Location','Phone Number','Guardian'];
@@ -50,7 +52,7 @@ const ChildRecordsPage = () => {
       />
       <table className='w-full border-collapse'>
         <tbody>
-          {/* Update DataGrid component usage */}
+        
           <DataGrid
             data={filteredChildRecords}
             columns={columns}

@@ -8,8 +8,7 @@ export async function GET (){
             })
         }
 
-        const response = await fetch(`${BASE_URL}/immunization-records`)
-
+        
         const response = await fetch(`${BASE_URL}/locations`)
 
         const result = await response.json();
