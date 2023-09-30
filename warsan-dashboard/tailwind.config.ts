@@ -4,7 +4,12 @@ const GoogleFontsPlugin = require('google-fonts-webpack-plugin');
 const customFontSize = {
   '18': '18px',
   '8': '8px',
+  '30':'30px'
 };
+
+const customCell = {
+  width: '200px',
+}
 
 const customWidth = {
   '48': '40.28213rem',
@@ -31,23 +36,24 @@ const config: Config = {
       },
       colors: {
         customBlue: '#044357',
-        customPurple: '#AF339B',
-        h1Blue: '1081EB',
-      },
-      customFontSize: {
-        ...customFontSize,
+
+        h1Blue:'1081EB',
+        hey:'#fef2f2'
       },
       fontWeight: {
-        normal: 400,
-        medium: 500,
-        semibold: 900,
-        bold: 1000,
+        normal: '400',
+        medium: '500',
+        semibold: '900',
+        bold: '1000',
       },
       fontSize: {
         ...customFontSize,
       },
       width: {
         ...customWidth,
+
+        ...customCell,
+
       },
     },
   },
@@ -66,3 +72,4 @@ const config: Config = {
 };
 
 export default config;
+
