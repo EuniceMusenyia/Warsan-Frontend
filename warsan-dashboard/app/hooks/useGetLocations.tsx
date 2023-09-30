@@ -4,7 +4,10 @@ interface LocationData {
 location:string;
 longitude:number;
 latitude:number
+immunization_rate: number;
 }
+
+
 const useGetLocations = ()=>{
   const [locations, setLocations] = useState<LocationData[]>([]);
   useEffect(()=>{

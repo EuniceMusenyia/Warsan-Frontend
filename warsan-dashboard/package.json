@@ -4,12 +4,16 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && tsc --downlevelIteration ",
     "start": "next start",
     "lint": "next lint"
+  
+  
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.10",
+
+
     "@types/react-dom": "18.2.7",
     "autoprefixer": "^10.4.15",
     "chart.js": "^2.9.4",
@@ -22,6 +26,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.11.0",
+
     "react-leaflet": "^4.2.1",
     "react-svg": "^16.1.25",
     "tailwindcss": "^3.3.3"
@@ -43,5 +48,6 @@
     "react-icons": "^4.11.0",
     "tailwindcss": "^3.3.3",
     "typescript": "5.2.2"
+
   }
 }

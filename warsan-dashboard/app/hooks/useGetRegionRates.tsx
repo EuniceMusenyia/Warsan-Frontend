@@ -5,7 +5,11 @@ interface RegionData {
     total_children: number;
     immunized_children: number;
     immunization_rate: number;
+    longitude: number; 
+    latitude: number;
   };
+
+
 const useGetRegionRates = ()=>{
   const [regionRates, setRegionRates] = useState<RegionData[]>([]);
   useEffect(()=>{

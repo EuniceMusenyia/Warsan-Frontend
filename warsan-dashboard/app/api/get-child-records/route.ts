@@ -1,4 +1,6 @@
+
 import { BASE_URL } from "@/app/config";
+
 export async function GET (){
     try{
         if (!BASE_URL){

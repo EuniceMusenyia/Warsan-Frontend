@@ -1,16 +1,20 @@
 import type { Config } from 'tailwindcss';
 const GoogleFontsPlugin = require('google-fonts-webpack-plugin');
+
 const customFontSize = {
   '18': '18px',
   '8': '8px',
   '30':'30px'
 };
+
 const customCell = {
   width: '200px',
 }
+
 const customWidth = {
-  '48':'40.28213rem'
-}
+  '48': '40.28213rem',
+};
+
 const config: Config = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -32,6 +36,7 @@ const config: Config = {
       },
       colors: {
         customBlue: '#044357',
+
         h1Blue:'1081EB',
         hey:'#fef2f2'
       },
@@ -44,9 +49,11 @@ const config: Config = {
       fontSize: {
         ...customFontSize,
       },
-      width:{
+      width: {
         ...customWidth,
+
         ...customCell,
+
       },
     },
   },
@@ -63,4 +70,6 @@ const config: Config = {
     }),
   ],
 };
+
 export default config;
+
