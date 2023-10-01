@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 'use client'
 import React, { useState } from 'react';
 import Link from 'next/link';
@@ -21,23 +22,23 @@ const SignInPage = () => {
   console.log('ola',user);
   return (
     <div className="flex md:flex-row flex-col h-screen font-poppins">
-      <div className="form-container bg-customBlue text-white flex flex-col items-start w-full h-full md:w-1/2">
+      <div className="form-container bg-customBlue text-white flex flex-col items-start w-full h-screen md:w-1/2">
         <div className="flex items-center 2 ml-4">
           <img
             src="/warsanlogo.svg"
             alt="Logo"
-            className="md:w-24 md:h-18 w-20 h:8 ml- md:ml- mt-6 "
+            className="md:w-24 md:h-18 w-20 h:8 ml- md:ml- mt-6"
           />
           <span className="md:text-5xl text-2xl md:ml- mt-6 font-semibold">
             RAJO
           </span>
         </div>
         <div>
-          <p className="md:text-5xl text-base font-bold mb-8 ml-12 md:ml-32 md:mt-4 mt-4 font-poppins ">
+          <p className="md:text-4xl text-base font-bold mb-8 ml-12 md:ml-32 md:mt-4 mt-4 font-poppins ">
             Welcome to Rajo Dashboard
           </p>
         </div>
-        <div className="mt-">
+        <div className="-mt-10">
           <img
             src="/signup-image.svg"
             alt="Image"
@@ -51,7 +52,7 @@ const SignInPage = () => {
           <p className="md:ml-64 ml-12 md:text-2xl text-base font-bold font-poppins">
             Do not have an account?{' '}
             <Link href="/signUp">
-              <span className="md:text-xl text-base text-customPurple"> Register</span>
+              <span className="md:text-xl text-base text-purple-400"> Register</span>
             </Link>
           </p>
         </div>

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 'use client'
 
 import React, { useState } from 'react';
@@ -54,11 +55,11 @@ const SignUpPage = () => {
         </div>
 
         <div>
-          <p className="md:text-5xl text-base font-bold mb-8 ml-12 md:ml-32 md:mt-4 mt-4 font-poppins ">
+          <p className="md:text-4xl text-base font-bold mb-8 ml-12 md:ml-32 md:mt-4 mt-4 font-poppins ">
             Welcome to Rajo Dashboard
           </p>
         </div>
-        <div className="mt-">
+        <div className="-mt-10">
           <img
             src="/signup-image.svg"
             alt="Image"
@@ -74,7 +75,7 @@ const SignUpPage = () => {
           <p className="md:ml-64 ml-12 md:text-2xl text-base font-bold font-poppins">
             Already have an account?{' '}
             <Link href="/signIn">
-              <span className="md:text-xl text-base text-customPurple">
+              <span className="md:text-xl text-base text-purple-400">
                 Log in
               </span>
             </Link>

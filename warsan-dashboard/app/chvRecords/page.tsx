@@ -4,7 +4,6 @@ import Link from 'next/link';
 import DataGrid from '../atoms/DataGrid';
 import SearchBar from '../atoms/Searchbar';
 import useGetChvs from '../hooks/useGetChvs';
-import { Sidebar } from '../components/Sidebar';
 
 const PAGE_SIZE = window.innerWidth < 768 ? 7 : 10;
 
@@ -47,8 +46,6 @@ const CHVPage = () => {
   };
 
   return (
-    <div>
-      <Sidebar/>
     <div className="CHV bg-white ml-96 font-kumbh-sans">
       <h1 className="md:text-30 text-base -ml-96 text-center font-inria-sans text-customBlue py-8 mb- font-bold">
         Community Health Volunteers
@@ -96,7 +93,6 @@ const CHVPage = () => {
           </button>
         </Link>
       </div>
-    </div>
     </div>
   );
 };

@@ -1,4 +1,5 @@
 import { BASE_URL } from "@/app/config";
+
 export async function GET (){
     try{
         if (!BASE_URL){
@@ -7,12 +8,16 @@ export async function GET (){
                 statusText : 'failed'
             })
         }
-        const response = await fetch(`${BASE_URL}/locations`)
+
+        const response = await fetch(`${BASE_URL}/healthworkers/`)
         const result = await response.json();
+        console.log("chvs:",result);
         return new Response(JSON.stringify(result), {
             status:200,
             statusText : 'success'
         })
+        
+
     }
     catch(error:any){
         return new Response(error.message,{
@@ -20,4 +25,4 @@ export async function GET (){
             statusText : "failed"
         })
     }
-}
+} 
