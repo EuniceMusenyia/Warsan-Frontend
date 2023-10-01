@@ -2,7 +2,9 @@
 import React, { useState } from 'react';
 import DataGrid from '../atoms/DataGrid';
 import SearchBar from '../atoms/Searchbar';
-import useGetChildRecords from '../hooks/getChildRecord/useGetChildRecords';
+import useGetChildRecords from '../hooks/useGetChildRecords';
+
+
 import { Sidebar } from '../components/Sidebar';
 const PAGE_SIZE = 15;
 const ChildRecordsPage = () => {
