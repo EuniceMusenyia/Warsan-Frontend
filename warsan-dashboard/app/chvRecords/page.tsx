@@ -5,7 +5,7 @@ import DataGrid from '../atoms/DataGrid';
 import SearchBar from '../atoms/Searchbar';
 import useGetChvs from '../hooks/useGetChvs';
 
-const PAGE_SIZE = window.innerWidth < 768 ? 3 : 14;
+const PAGE_SIZE = window.innerWidth < 768 ? 7 : 10;
 
 const CHVPage = () => {
   const chvs = useGetChvs(); 
@@ -16,12 +16,14 @@ const CHVPage = () => {
   const handleSearchChange = (event: ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(event.target.value);
     setCurrentPage(1);
+    
+
   };
 
   const numColumns = 5;
 
-  const columns = ['first_name', 'last_name', 'email', 'phone_number', 'location_name', 'hospital'];
-  const columnDisplayNames: string[] = ['First Name', 'Last Name', 'Email', 'Phone Number', 'Location', 'Hospital'];
+  const columns = ['first_name', 'last_name', 'email', 'phone_number', 'hospital'];
+  const columnDisplayNames: string[] = ['First Name', 'Last Name', 'Email', 'Phone Number', 'Hospital'];
 
   const filteredCHV = chvs.chvs.filter((item) => {
     const searchTerm = searchQuery.toLowerCase();
@@ -30,7 +32,6 @@ const CHVPage = () => {
       item.last_name.toLowerCase().includes(searchTerm) ||
       item.phone_number.toLowerCase().includes(searchTerm) ||
       item.email.toLowerCase().includes(searchTerm) ||
-      item.location_name.toLowerCase().includes(searchTerm) ||
       item.hospital.toLowerCase().includes(searchTerm)
     );
   });

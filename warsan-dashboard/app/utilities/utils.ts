@@ -130,7 +130,9 @@ export const loginUser = async (loginData: LoginData) => {
     try{
         const response = await fetch (url);
         const result = await response.json();
+        console.log("chvs:",result);
         return result
+        
 
     }
     catch(error:any){
@@ -138,18 +140,19 @@ export const loginUser = async (loginData: LoginData) => {
     }
 }
 
+interface healthworkerData {
+  username: string;
+  email: string;
+  password: string;
+  first_name: string;
+  last_name: string;
+  hospital: string;
+  phone_number: string;
+}
 
 
 
-interface UsersData {
-    username: string;
-    email: string;
-    password: string;
-    first_name: string;
-    last_name: string;
-
-
-  }
+  
 export const createHealthworker = async (userData: UsersData) => {
     const url = `/api/create-healthworker`;
     try {

@@ -1,4 +1,6 @@
 
+'use client'
+
 import { useEffect, useState } from "react";
 import { getChvs } from "@/app/utilities/utils";
 
@@ -7,12 +9,12 @@ interface ChvData {
   last_name: string;
   email: string;
   phone_number: string;
-  location_name: string;
   hospital :string
 }
 
 const useGetChvs = ()=>{
   const [chvs, setchvs] = useState<ChvData[]>([]);
+  const [refetchData, setRefetchData] = useState(false);
   useEffect(()=>{
     (async()=>{
       const chvs = await getChvs();
@@ -20,9 +22,11 @@ const useGetChvs = ()=>{
       console.log('Filtered CHVs:', chvs);
 
     })();
-  },[])
+  },[refetchData])
 
-  return {chvs}
+  return {chvs,
+  
+  refetch:()=>setRefetchData(!refetchData)}
 }
 
 export default useGetChvs;
