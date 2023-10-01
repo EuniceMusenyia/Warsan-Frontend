@@ -16,55 +16,41 @@ function Overview() {
   const [immunized, setImmunized] = useState<number>(0);
   const [vaccineCounts, setVaccineCounts] = useState<{ [key: string]: number }>({});
   const [lineChartData, setLineChartData] = useState<number[]>([]);
-
   useEffect(() => {
     if (child.length === 0) {
       return;
     }
-
     const totalChildren: number = child.length;
     const immunizedCount: number = child.filter((childData) => childData.is_immunized).length;
-
     setPopulation(totalChildren);
     setImmunized(immunizedCount);
-
     const vaccineChoices: string[] = child.flatMap((childData) =>
       childData.vaccines.map((vaccine) => vaccine.vaccine_choice)
     );
-
     const counts: { [key: string]: number } = {};
-
     vaccineChoices.forEach((choice) => {
       counts[choice] = (counts[choice] || 0) + 1;
     });
-
     setVaccineCounts(counts);
   }, [child]);
-
   useEffect(() => {
     updateStackedBarChart(Object.keys(vaccineCounts), Object.values(vaccineCounts));
     updatePieChart(immunized, population);
     updateLineChart(lineChartData);
   }, [vaccineCounts, immunized, population, lineChartData]);
-
   const calculateMonthlyRates = (childData: any[]) => {
     const monthlyRates = Array(12).fill(0);
-
     childData.forEach((child) => {
       const date = new Date(child.date_of_administration);
       const month = date.getMonth();
       monthlyRates[month] += 1;
     });
-
     const totalChildren = childData.length;
     const monthlyRatePercentages = monthlyRates.map((count) => (count / totalChildren) * 100);
-
     return monthlyRatePercentages;
   };
-
   const updateStackedBarChart = (labels: string[], data: number[]) => {
     const stackedCanvas = document.getElementById('stackedBarChart') as HTMLCanvasElement | null;
-
     if (stackedCanvas) {
       const stackedCtx = stackedCanvas.getContext('2d');
       if (stackedCtx) {
@@ -102,15 +88,12 @@ function Overview() {
       }
     }
   };
-
   const updatePieChart = (immunized: number, total: number) => {
     const pieCanvas = document.getElementById('myChart') as HTMLCanvasElement | null;
-
     if (pieCanvas) {
       const notImmunized = total - immunized;
       const immunizedPercentage: number = (immunized / total) * 100;
       const notImmunizedPercentage: number = (notImmunized / total) * 100;
-
       var pieChart = new Chart(pieCanvas, {
         type: 'pie',
         data: {
@@ -137,10 +120,8 @@ function Overview() {
       });
     }
   };
-
   const updateLineChart = (data: number[]) => {
     const lineCanvas = document.getElementById('lineChart') as HTMLCanvasElement | null;
-
     if (lineCanvas) {
       var lineChart = new Chart(lineCanvas, {
         type: 'line',
@@ -160,16 +141,13 @@ function Overview() {
       });
     }
   };
-
   useEffect(() => {
     if (child.length === 0) {
       return;
     }
-
     const monthlyRateData = calculateMonthlyRates(child);
     setLineChartData(monthlyRateData);
   }, [child]);
-
   return (
     <div>
       <Sidebar/>
@@ -226,8 +204,6 @@ function Overview() {
       </div>
     </div>
     </div>
-
   );
 }
-
 export default Overview;

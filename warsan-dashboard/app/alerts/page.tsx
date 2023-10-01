@@ -104,5 +104,6 @@ const Map: React.FC = () => {
     </div>
 
   );
+  
 };
 export default Map;
