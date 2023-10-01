@@ -1,4 +1,6 @@
 import { BASE_URL } from "../../config";
+
+
 export async function POST(request: Request) {
   try {
     if (!BASE_URL) {
@@ -8,13 +10,17 @@ export async function POST(request: Request) {
       });
     }
     const body = await request.json().then(response => response);
-    const result = await fetch(`${BASE_URL}/healthworker/signup`, {
+    console.log({body});
+    
+    const result = await fetch(`${BASE_URL}/healthworker/signup/`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(body),
     });
+    console.log(result);
+    
     const user = await result.json();
 console.log('users', user);
     return new Response(JSON.stringify(user), {
