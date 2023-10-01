@@ -25,23 +25,13 @@ const FormAtom = ({
   isSignUp,
 }: FormAtomProps) => {
   const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   const handlePasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setPassword(event.target.value);
   };
 
-  const handleConfirmPasswordChange = (
-    event: React.ChangeEvent<HTMLInputElement>
-  ) => {
-    setConfirmPassword(event.target.value);
-  };
-
   const allFields = [...fields];
-
-  const isPasswordMatching = password === confirmPassword;
 
   return (
     <div className="flex md:flex-row flex-col h-screen font-poppins">
@@ -97,6 +87,7 @@ const FormAtom = ({
                 className="md:p-3 md:pl-4 p-1 border border-customBlue rounded w-[500px] font-poppins text-customBlue text-left text-lg"
                 placeholder="Enter Password"
                 required
+                value={password}
                 onChange={handlePasswordChange}
               />
               <button
@@ -109,34 +100,8 @@ const FormAtom = ({
             </div>
           </div>
 
-          {isSignUp && (
-            <div className="mb-8" key="confirmPassword">
-              <div className="relative">
-                <input
-                  type={showConfirmPassword ? 'text' : 'password'}
-                  id="confirmPassword"
-                  className={`md:p-3 md:pl-4 p-1 border border-customBlue rounded w-[500px] font-poppins text-customBlue text-left text-lg`}
-                  placeholder="Confirm Password"
-                  required
-                  onChange={handleConfirmPasswordChange}
-                />
-                <button
-                  type="button"
-                  className="absolute top-1/2 transform -translate-y-1/2 right-4"
-                  onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                >
-                  {showConfirmPassword ? <FaEye style={{ color: 'black' }} /> : <FaEyeSlash style={{ color: 'black' }} />}
-                </button>
-              </div>
-              {!isPasswordMatching && (
-                <div className="text-red-500">Passwords do not match.</div>
-              )}
-            </div>
-          )}
-
           <button
             className="text-2xl font-semibold md:mt-12 mb-6 bg-customBlue text-white font-poppins px-20 py-2  rounded-lg"
-            disabled={isSignUp && !isPasswordMatching}
           >
             {buttonText}
           </button>
