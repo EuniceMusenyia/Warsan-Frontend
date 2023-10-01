@@ -31,7 +31,7 @@ const useCreateHealthworker = () => {
 
       if (response.id) {
         chvs.refetch();
-        router.push("/chvRecords");
+        router.push("/CHVRecords");
       }
 
       setCreatedHealthworker(response);

@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import useCreateHealthworker from '../hooks/useCreateHealthworker';
+import { Sidebar } from '../components/Sidebar';
 
 const CHVRegistrationForm = () => {
   const [username, setUsername] = useState('');
@@ -33,6 +34,8 @@ const CHVRegistrationForm = () => {
   
 
   return (
+    <div>
+      <Sidebar/>
     <div className='form-container bg-white flex flex-col items-center justify-center min-h-screen md:ml-60 ml-10'>
       <h1 className='md:text-5xl font-semibold md:mb-6 mb-2 text-customBlue'>CHV Registration</h1>
       <form className='flex flex-col items-center' onSubmit={handleSubmit}>
@@ -128,6 +131,7 @@ const CHVRegistrationForm = () => {
           Register
         </button>
       </form>
+    </div>
     </div>
   );
 };
