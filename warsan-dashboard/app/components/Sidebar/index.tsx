@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 'use client'
 import React, { useState } from "react";
 import Link from "next/link";
@@ -6,6 +7,14 @@ import { TbAlertTriangle } from "react-icons/tb";
 import { PiUsersThreeDuotone, PiUsersFour } from "react-icons/pi";
 import { MdLogout } from "react-icons/md"
 import Logout from "../Logout";
+
+
+// type LogoutProps = {
+//   isOpen: boolean;
+//   onClose: () => void;
+//   onLogout: () => void;
+// };
+
 interface ChildItem {
   icon: React.ReactElement;
   label: string;
@@ -110,12 +119,12 @@ export const Sidebar: React.FC = () => {
       </div>
       <main className="flex-1"></main>
       {showLogoutModal && (
-        <Logout
-          isOpen={showLogoutModal}
-          onClose={() => setShowLogoutModal(false)}
-          onLogout={handleLogoutConfirmation}
-        />
-      )}
+  <Logout
+    isOpen={showLogoutModal}
+    onClose={() => setShowLogoutModal(false)}
+    // onLogout={handleLogoutConfirmation}
+  />
+)}
     </div>
   );
 };

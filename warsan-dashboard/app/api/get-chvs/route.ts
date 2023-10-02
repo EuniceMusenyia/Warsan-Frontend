@@ -11,7 +11,6 @@ export async function GET (){
 
         const response = await fetch(`${BASE_URL}/healthworkers/`)
         const result = await response.json();
-        console.log("chvs:",result);
         return new Response(JSON.stringify(result), {
             status:200,
             statusText : 'success'

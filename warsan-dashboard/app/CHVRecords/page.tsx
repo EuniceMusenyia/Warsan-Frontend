@@ -6,7 +6,7 @@ import SearchBar from '../atoms/Searchbar';
 import useGetChvs from '../hooks/useGetChvs';
 import { Sidebar } from '../components/Sidebar';
 
-const PAGE_SIZE = window.innerWidth < 768 ? 7 : 10;
+const PAGE_SIZE = 10;
 
 const CHVPage = () => {
   const chvs = useGetChvs(); 
