@@ -1,6 +1,16 @@
-import React from 'react';
+import React, { MouseEventHandler, ReactNode } from 'react';
 
-const Modal = ({ closeModal, children }:any) => {
+interface LogoutProps {
+  isOpen: boolean;
+  onClose: () => void;
+  onLogout: () => void;
+  closeModal: MouseEventHandler;
+  children: ReactNode;
+}
+
+const Modal: React.FC<LogoutProps> = ({ isOpen, closeModal, children }) => {
+  if (!isOpen) return null;
+
   return (
     <div className="modal">
       <div className="modal-content">

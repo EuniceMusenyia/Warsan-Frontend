@@ -130,7 +130,6 @@ export const loginUser = async (loginData: LoginData) => {
     try{
         const response = await fetch (url);
         const result = await response.json();
-        console.log("chvs:",result);
         return result
         
 
