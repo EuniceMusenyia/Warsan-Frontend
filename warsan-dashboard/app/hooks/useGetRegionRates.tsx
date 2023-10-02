@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import { getRegionRates } from "@/app/utilities/utils";
 interface RegionData {
@@ -13,7 +14,7 @@ interface RegionData {
 const useGetRegionRates = ()=>{
   const [regionRates, setRegionRates] = useState<RegionData[]>([]);
   useEffect(()=>{
-    (async()=>{
+      (async()=>{      
       const regionRate = await getRegionRates();
       setRegionRates(regionRate);
       console.log('Filtered CHVs:', regionRate);
